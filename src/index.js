@@ -40,7 +40,7 @@ async function onSearchFormSubmit(e) {
       refs.loadMoreBtnRef.classList.remove('is-hidden');
     }
     alertSuccessOnFindingImages(totalHits);
-    createGalleryCardsMarkup(hits);
+    refs.galleryCardsRef.innerHTML = createGalleryCardsMarkup(hits);
     simpleLightboxGallery.refresh();
   } catch (error) {
     console.log(error);
@@ -61,7 +61,10 @@ async function onLoadMoreBtnClick() {
       refs.loadMoreBtnRef.classList.add('is-hidden');
       alertEndOfSearchResults();
     }
-    createGalleryCardsMarkup(hits);
+    refs.galleryCardsRef.insertAdjacentHTML(
+      'beforeend',
+      createGalleryCardsMarkup(hits)
+    );
     simpleLightboxGallery.refresh();
     onPageScroll();
   } catch (error) {

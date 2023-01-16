@@ -1,7 +1,5 @@
-export const createGalleryCardsMarkup = pictures => {
-  const galleryCardsRef = document.querySelector('.gallery');
-
-  const markup = pictures
+export const createGalleryCardsMarkup = pictures =>
+  pictures
     .map(el => {
       return `
             <div class="gallery__card">
@@ -26,6 +24,3 @@ export const createGalleryCardsMarkup = pictures => {
             `;
     })
     .join('');
-
-  galleryCardsRef.insertAdjacentHTML('beforeend', markup);
-};
