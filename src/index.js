@@ -75,6 +75,8 @@ async function onLoadMoreBtnClick() {
   }
 }
 
+//comment
+
 function alertFailureOnFindingImages() {
   Notify.failure(
     'Sorry, there are no images matching your search query. Please try again.'
