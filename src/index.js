@@ -3,6 +3,7 @@ import { createGalleryCardsMarkup } from './js/gallery-markup';
 import { onWindowScroll, onUpBtnClick, onPageScroll } from './js/scroll';
 import { simpleLightboxGallery } from './js/simple-lightbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import InfiniteScroll from 'infinite-scroll';
 
 const refs = {
   searchFormRef: document.querySelector('.js-search-form'),
