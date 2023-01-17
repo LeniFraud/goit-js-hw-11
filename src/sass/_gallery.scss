@@ -32,7 +32,8 @@
   &:focus {
     color: white;
     background-color: rgb(24, 226, 101);
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
   }
 
   &:disabled {
@@ -59,13 +60,23 @@
 
 .gallery__card {
   flex-basis: calc((100% - 120px) / 4);
-  margin-bottom: 50px;
+}
+
+.gallery__link {
+  display: flex;
+  flex-direction: column;
+  color: currentColor;
+  transition: box-shadow 250ms linear, transform 250ms linear;
+
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+    transform: scale(1.06);
+  }
 }
 
 .gallery__img {
-  width: 100%;
-  height: 100%;
-  max-width: unset;
+  height: 170px;
   object-fit: cover;
 }
 
@@ -76,7 +87,7 @@
   background-color: rgb(245, 245, 245);
   border: 1px solid rgb(150, 150, 150, 0.5);
   border-top: none;
-  border-radius: 0 0 10px 10px;
+  // border-radius: 0 0 10px 10px;
 }
 
 .card__meta {
@@ -88,7 +99,6 @@
 }
 
 .page-up-btn {
-  display: none;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -115,4 +125,31 @@
   width: 50px;
   height: 50px;
   fill: currentColor;
+}
+
+.loader {
+  margin: 30px auto 0px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gallery__message {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 25px;
+  font-style: italic;
+  color: #4d4d4d;
 }

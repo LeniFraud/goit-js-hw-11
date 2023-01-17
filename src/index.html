@@ -10,7 +10,7 @@
     <button
       type="button"
       aria-label="Go to the top"
-      class="page-up-btn js-up-btn"
+      class="page-up-btn is-hidden js-up-btn"
     >
       <svg class="page-up-icon">
         <use href="./images/icons.svg#up-arrow"></use>
@@ -33,6 +33,11 @@
         <button type="button" class="btn btn--load is-hidden js-load-more">
           Load more
         </button>
+        <div class="js-observe"></div>
+        <div class="loader js-loader is-hidden"></div>
+        <p class="gallery__message js-load-end is-hidden">
+          You've reached the end of content...
+        </p>
       </div>
     </section>
     <script src="./index.js" type="module"></script>

@@ -9,9 +9,9 @@ upBtnRef.addEventListener('click', onUpBtnClick);
 
 function onWindowScroll() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    upBtnRef.style.display = 'flex';
+    upBtnRef.classList.remove('is-hidden');
   } else {
-    upBtnRef.style.display = 'none';
+    upBtnRef.classList.add('is-hidden');
   }
 }
 

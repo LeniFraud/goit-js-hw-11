@@ -13,17 +13,19 @@ export class PixabayAPI {
   }
 
   async getPicturesByQuery() {
-    const searchParams = new URLSearchParams({
-      key: PixabayAPI.API_KEY,
-      q: this.query,
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: true,
-      page: this.page,
-      per_page: this.queryAmt,
-    });
+    const searchParams = {
+      params: {
+        key: PixabayAPI.API_KEY,
+        q: this.query,
+        image_type: 'photo',
+        orientation: 'horizontal',
+        safesearch: true,
+        page: this.page,
+        per_page: this.queryAmt,
+      },
+    };
 
-    const { data } = await axios.get(`${PixabayAPI.BASE_URL}?${searchParams}`);
+    const { data } = await axios.get(`${PixabayAPI.BASE_URL}`, searchParams);
 
     return data;
   }
